@@ -2,14 +2,28 @@
 
 ### data_wrangling_001
 
-Intended to provide tools for collection and cleaning and storage of publicly available data primarily for testing and demonstrating the functionality.
+A data engineering environment with JupyterLab that includes various tools for working with data. The container starts with JupyterLab running for immediate access.
 
-Jupyter lab is provided and runs on container start.  This allows for a quick startup and testing of the functionality.
+#### Included Tools:
+- **Data Collection:**
+  - `beautifulsoup4`
+  - `yfinance`
+  - `Quandl`
+  - `newspaper4k`
+  - `alpha-vantage`
 
-Includes tools to collect data such as beautifulsoup4, yfinance, Quandl, newspaper4k, alpha-vantage. Provides recent versions (as of Nov 2024) of standard python tools such as Numpy, Pandas, dask and Matplotlib asnd tools to interact with data storage such as fastparquet, deltalake.
+- **Data Processing:**
+  - `numpy`
+  - `pandas`
+  - `dask`
+  - `matplotlib`
 
+- **Storage & Formats:**
+  - `sqlite3`
+  - `fastparquet`
+  - `deltalake`
 
-
+Note: All packages are maintained at recent versions (as of Nov 2024).
 
 
 ## Machine Learning
