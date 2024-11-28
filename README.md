@@ -14,27 +14,109 @@ Before using the scripts provided in this repository you will need Docker (or an
 
 ## Docker Commands
 
-- `docker build -t <image name> .` : Build an image from the current directory's Dockerfile
- - `-t` tag the image with `<image name>`
- - `.` is used to indicate that the Dockerfile is in the current directory
- - `-f <Dockerfile>` can be used to specify a custom Dockerfile
- - `docker run <image name>`: Run an image.
- - `-v ` mount a volume from the host system into the container. This allows you to share files between the host and the container.
- - `docker ps`: List all running containers.
- - `docker stop <container id>`: Stop a container by its ID.
- - `docker rm <container id>`: Remove a container by its ID.
- - `docker rmi <image name>`: Remove an image by its name.
- - `docker images`: List all available images on the system.
- - `docker pull <image name>`: Pulls an image from Docker Hub.
+### Basic Commands and Options
+```bash
+# Building Images
+docker build -t <image_name>:<tag> .     # Build from Dockerfile in current directory
+  -t                                     # Tag the image with a name
+  -f <Dockerfile>                        # Use a specific Dockerfile
+  --no-cache                            # Build without using cache
 
-Example usage of the commands above:
-    1. Build an image named `my-app`: `docker build -t my-app .`
-    2. Run a container `my-app` and map port 80 to 5000 in the container: `docker run --rm -p 5000:80 my-app`
-    3. Stop all containers running on your system: `docker stop $(docker ps -aq)`
-    4. Remove all containers and images from your system: `docker rm $(docker ps -aq); docker rmi $(docker images -q)`
-    5. Run a container `my-app` and map port 8888 to 8888 in the container and also mount `/home/user/notebooks` in `/app/shared_working` on the container: `docker run -p 8888:8888 -v /home/user/notebooks:/app/shared_working my-app`
+# Running Containers
+docker run <image_name>                  # Run a container
+  -d                                    # Run in detached mode (background)
+  -it                                   # Run interactively with terminal
+  -v                                    # Mount a volume from host to container
+  -p                                    # Map ports from host to container
+  --rm                                  # Remove container when it exits
 
-More information about Docker commands can be found [here](https://docs.docker.com/reference/cli/docker/).
+# Container Management
+docker ps                               # List running containers
+docker ps -a                            # List all containers (including stopped)
+docker stop <container_id>              # Stop a container
+docker rm <container_id>                # Remove a container
+docker rmi <image_name>                 # Remove an image
+docker images                           # List all images
+docker pull <image_name>                # Pull image from Docker Hub
+```
+
+### Real-World Examples
+1. Build and tag a data wrangling environment:
+   ```bash
+   docker build -t data_wrangling_001 .
+   ```
+
+2. Run a container with port mapping:
+   ```bash
+   # Map container port 80 to host port 5000
+   docker run --rm -p 5000:80 data_wrangling_001
+   ```
+
+3. Stop all running containers:
+   ```bash
+   docker stop $(docker ps -aq)
+   ```
+
+4. Clean up your system (remove all containers and images):
+   ```bash
+   docker rm $(docker ps -aq)
+   docker rmi $(docker images -q)
+   ```
+
+5. Run a data wrangling container with mounted volumes and port mapping:
+   ```bash
+   docker run -p 8888:8888 \
+     -v /home/user/notebooks:/app/shared_working \
+     data_wrangling_001
+   ```
+
+### Advanced Examples
+
+1. Run a Jupyter notebook server with data volumes (using data wrangling environment):
+   ```bash
+   docker run -d \
+       --name jupyter_data_wrangling \
+       -p 8888:8888 \
+       -v $(pwd)/notebooks:/notebooks \
+       -v $(pwd)/data:/data \
+       data_wrangling_001
+   ```
+
+2. Run with resource limits and environment variables (machine learning environment):
+   ```bash
+   docker run -d \
+       --name ml_training \
+       --gpus all \
+       --memory="8g" \
+       --cpus="4" \
+       -e PYTHONPATH=/app \
+       -v $(pwd):/app \
+       machine_learning_001
+   ```
+
+### Additional Useful Commands
+```bash
+# Resource Management
+docker run --memory="2g" <image>         # Limit memory to 2GB
+docker run --cpus="1.5" <image>          # Limit CPU to 1.5 cores
+docker run --gpus all <image>            # Give access to all GPUs
+
+# Environment Variables
+docker run -e VAR=value <image>          # Set environment variable
+docker run --env-file=.env <image>       # Load environment from file
+
+# Container Operations
+docker logs <container_id>               # View container logs
+docker exec -it <container_id> bash      # Get a shell in running container
+docker cp <container_id>:/path/file .    # Copy files from container
+
+# System Cleanup
+docker container prune                   # Remove stopped containers
+docker image prune                       # Remove unused images
+docker system prune -a                   # Remove all unused resources
+```
+
+More information about Docker commands can be found in the [official Docker documentation](https://docs.docker.com/reference/cli/docker/).
 
 
 
