@@ -1,5 +1,9 @@
 # Containerised Environments for Data Science
 
+A collection of containerised environments for data science and machine learning. Each environment is designed to be self-contained and reproducible.
+
+For a detailed list of available environments and their included tools, see the [Container Index](container_index.md).
+
 In this repository, you will find a collection of Dockerfiles and configuration scripts that can be used to build containers that have been used for Data Engineering, Data Science (including Machine Learning), and related projects. These environments leverage Docker, a popular tool for managing containers, to provide consistent behaviour across different deployment scenarios. Most of the containers are based on the Linux kernel and the packages are installed using `apt-get` and `pip`.
 
 
