@@ -75,7 +75,7 @@ docker pull <image_name>                # Pull image from Docker Hub
 1. Run a Jupyter notebook server with data volumes (using data wrangling environment):
    ```bash
    docker run -d \
-       --name jupyter_data_wrangling \
+       --name data_wrangling_001\
        -p 8888:8888 \
        -v $(pwd)/notebooks:/notebooks \
        -v $(pwd)/data:/data \
