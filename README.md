@@ -21,7 +21,7 @@ Before using the scripts provided in this repository you will need Docker (or an
 ### Basic Commands and Options
 ```bash
 # Building Images
-docker build -t <image_name>:<tag> .     # Build from Dockerfile in current directory
+docker build -t <image_name>_<tag> .     # Build from Dockerfile in current directory
   -t                                     # Tag the image with a name
   -f <Dockerfile>                        # Use a specific Dockerfile
   --no-cache                            # Build without using cache
@@ -47,7 +47,7 @@ docker pull <image_name>                # Pull image from Docker Hub
 ### Real-World Examples
 1. Build an environment:
    ```bash
-   docker build -t  <container_name> .
+   docker build -t <container_name>:latest -f Dockerfile .
    ```
 
 2. Run a container with port mapping:
