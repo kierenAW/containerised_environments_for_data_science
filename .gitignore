@@ -27,5 +27,32 @@ wheels/
 .installed.cfg
 *.egg
 
+# Ignore API keys, secrets, and environment-specifsic credentials
+*.key
+*.pem
+*.cert
+*.p12
+*.pfx
+
+# Environment files that may contain sensitive information
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# Specific key and secret files
+*secret*
+*secrets*
+*key*
+*keys*
+*.pub
+
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# Potential credential files
+credentials.json
+service-account-key.json
+*.key.json
