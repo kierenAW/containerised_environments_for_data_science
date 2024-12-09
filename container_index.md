@@ -40,7 +40,7 @@ This container is identical to data_wrangling_001 in terms of data science tools
 
 ### machine_learning_001
 
-A machine learning environment with JupyterLab that includes various tools for developing and training models, with support for Large Language Models (LLMs). The container starts with JupyterLab running for immediate access.
+A machine learning environment with JupyterLab that includes various tools for developing, training and testing machine learning models, with support for Large Language Models (LLMs). The container starts with JupyterLab running for immediate access.
 
 #### Included Tools:
 - **Core Libraries:**
