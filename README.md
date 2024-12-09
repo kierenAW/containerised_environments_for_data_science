@@ -124,6 +124,52 @@ More information about Docker commands can be found in the [official Docker docu
 
 
 
+## Container Access with SSH
+
+### 1. SSH Key Setup
+```bash
+# Generate SSH key pair for container access
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/container_key -N ""
+
+# Verify the key was created
+ls -l ~/.ssh/container_key*
+```
+
+This creates:
+- Private key: `~/.ssh/container_key`
+- Public key: `~/.ssh/container_key.pub`
+
+### 2. Container Setup
+The container's Dockerfile is configured to:
+- Create a non-root user `zeus`
+- Set up SSH with security hardening
+- Import your public key during container startup
+
+### 3. Building and Running
+```bash
+# Build the container
+docker build -t <container_name> .
+
+# Run with SSH and JupyterLab access
+docker run \
+    -p 8888:8888 \
+    -p 2222:22 \
+    -v ~/.ssh/container_key.pub:/home/zeus/.ssh/authorized_keys \
+    -v ~/data_science:/app/ \
+    -d <container_name>
+
+# Connect to container
+ssh -i ~/.ssh/container_key -p 2222 zeus@localhost
+```
+
+The SSH configuration includes:
+- Public key authentication only
+- Root login disabled
+- Fail2ban enabled
+- Secure crypto settings
+
+
+
 ## Naming Conventions
 The naming convention for the containers is: `<task_name>_<version>` e.g. `data_wrangling_001`.
 Container types are:
