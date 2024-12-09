@@ -79,11 +79,11 @@ docker pull <image_name>                # Pull image from Docker Hub
 1. Run a Jupyter notebook server with data volumes (using data wrangling environment):
    ```bash
    docker run -d \
-       --name data_wrangling_001\
+       --name <container_name>\
        -p 8888:8888 \
        -v $(pwd)/notebooks:/notebooks \
        -v $(pwd)/data:/data \
-       data_wrangling_001
+       <container_name>
    ```
 
 2. Run with resource limits and environment variables (machine learning environment):
