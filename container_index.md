@@ -28,7 +28,7 @@ Note: All packages are maintained at recent versions (as of Nov 2024).
 
 ### data_wrangling_002
 
-This container is identical to data_wrangling_001 in terms of data science tools and packages, with the addition of SSH access for remote development. The container provides both web-based JupyterLab access and SSH connectivity.
+This container extends the data_wrangling_001 image by adding SSH access for remote development, making it easier to access and work with the data science tools and packages included. The container provides both web-based JupyterLab and SSH connectivity, with a simpler less secure configuration than future versions will provide.
 
 #### Features:
 - All features from data_wrangling_001
@@ -40,7 +40,8 @@ This container is identical to data_wrangling_001 in terms of data science tools
 
 ### machine_learning_001
 
-A machine learning environment with JupyterLab that includes various tools for developing, training and testing machine learning models, with support for Large Language Models (LLMs). The container starts with JupyterLab running for immediate access.
+A machine learning environment with JupyterLab that includes various tools for developing, training and testing machine learning models, with support for Large Language Models (LLMs). The container starts with JupyterLab running for immediate access and provides SSH access using a key. A static Jupyter token is also configurable at build time. This environment is built for CPU usage, ensuring wide compatibility across different systems, but does not include GPU acceleration.
+
 
 #### Included Tools:
 - **Core Libraries:**
