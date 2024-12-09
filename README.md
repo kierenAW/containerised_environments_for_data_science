@@ -45,15 +45,15 @@ docker pull <image_name>                # Pull image from Docker Hub
 ```
 
 ### Real-World Examples
-1. Build and tag a data wrangling environment:
+1. Build an environment:
    ```bash
-   docker build -t data_wrangling_001 .
+   docker build -t  <container_name> .
    ```
 
 2. Run a container with port mapping:
    ```bash
    # Map container port 80 to host port 5000
-   docker run --rm -p 5000:80 data_wrangling_001
+   docker run --rm -p 5000:80 <container_name>
    ```
 
 3. Stop all running containers:
@@ -67,11 +67,11 @@ docker pull <image_name>                # Pull image from Docker Hub
    docker rmi $(docker images -q)
    ```
 
-5. Run a data wrangling container with mounted volumes and port mapping:
+5. Run a container with mounted volumes and port mapping:
    ```bash
    docker run -p 8888:8888 \
-     -v /home/user/notebooks:/app/shared_working \
-     data_wrangling_001
+     -v /home/user/data:/app/shared_working \
+      <container_name>
    ```
 
 ### Advanced Examples
@@ -89,7 +89,7 @@ docker pull <image_name>                # Pull image from Docker Hub
 2. Run with resource limits and environment variables (machine learning environment):
    ```bash
    docker run -d \
-       --name ml_training \
+       --name  <container_name> \
        --gpus all \
        --memory="8g" \
        --cpus="4" \
