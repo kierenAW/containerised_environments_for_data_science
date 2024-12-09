@@ -95,8 +95,14 @@ docker pull <image_name>                # Pull image from Docker Hub
        --cpus="4" \
        -e PYTHONPATH=/app \
        -v $(pwd):/app \
+       -p 8888:8888 \
+       -p 2222:22 \
+       -v ~/.ssh/container_key.pub:/home/zeus/.ssh/authorized_keys \
        machine_learning_001
    ```
+   Access Jupyter Lab at: http://localhost:8888/lab?token=abc123
+
+   Note: The default Jupyter token is set to 'abc123'. You can change this by modifying the `--NotebookApp.token` parameter in `entrypoint.sh` if the container supports it.
 
 ### Additional Useful Commands
 ```bash
@@ -119,6 +125,24 @@ docker container prune                   # Remove stopped containers
 docker image prune                       # Remove unused images
 docker system prune -a                   # Remove all unused resources
 ```
+
+### Docker Maintenance
+
+#### Clearing Docker Cache
+
+To remove all unused Docker objects and free up disk space, use the following command:
+
+```bash
+docker system prune -a -f
+```
+
+This command will:
+- Remove all stopped containers
+- Delete all networks not used by at least one container
+- Remove all images without an associated container
+- Clear all build cache
+
+**Caution**: This command permanently deletes Docker resources, so use it carefully to avoid removing important images or containers.
 
 More information about Docker commands can be found in the [official Docker documentation](https://docs.docker.com/reference/cli/docker/).
 
