@@ -169,6 +169,25 @@ A machine learning environment with JupyterLab that includes various tools for d
 Note: All packages are maintained at recent versions (as of Nov 2024).
 
 
+### machine_learning_002
+
+An enhanced version of machine_learning_001 with CUDA support for GPU acceleration. This container is built on the NVIDIA CUDA base image (cuda:12.1.0-base-ubuntu22.04) and includes all the machine learning tools from machine_learning_001, optimized for GPU usage. The container provides both JupyterLab and SSH access, making it suitable for both interactive development and production deployments.
+
+#### Features:
+- All features from machine_learning_001
+- NVIDIA CUDA 12.1 support for GPU acceleration
+- GPU-optimized PyTorch and related libraries
+- SSH access for remote development
+- JupyterLab interface
+
+#### Additional GPU-Specific Tools:
+- NVIDIA CUDA Toolkit 12.1
+- GPU-enabled PyTorch 2.1.0
+- CUDA-optimized deep learning libraries
+
+Note: This container requires a compatible NVIDIA GPU and appropriate NVIDIA drivers installed on the host system. Use the `--gpus all` flag when running the container to enable GPU access.
+
+
 ## Analysis Visualisation
 
 ### analysis_visualisation_001
