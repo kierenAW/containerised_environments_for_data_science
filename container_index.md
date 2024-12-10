@@ -36,6 +36,76 @@ This container extends the data_wrangling_001 image by adding SSH access for rem
 - JupyterLab interface
 
 
+### data_wrangling_003
+
+This container is an enhanced version of data_wrangling_002 with a comprehensive set of data science packages and improved security features. It provides both JupyterLab and SSH access, with packages organized into logical categories for better maintainability.
+
+#### Features:
+- Extended from data_wrangling_002
+- Enhanced security configuration
+- Organized package structure
+- Pinned package versions (as of Dec 2024)
+
+#### Package Categories:
+- **Core Data Science and Analysis:**
+  - `numpy`
+  - `pandas`
+  - `scipy`
+  - `statsmodels`
+
+- **Data Visualization:**
+  - `matplotlib`
+  - `seaborn`
+  - `plotly`
+  - `bokeh`
+
+- **Jupyter and IDE Tools:**
+  - `jupyterlab`
+  - `jupyter-server`
+  - `ipywidgets`
+  - `ipykernel`
+
+- **Data Storage and Processing:**
+  - `sqlite3`
+  - `sqlalchemy`
+  - `dask`
+  - `pyarrow`
+  - `fastparquet`
+
+- **Machine Learning and Stats:**
+  - `scikit-learn`
+  - `scikit-image`
+  - `statsmodels`
+  - `category_encoders`
+
+- **Web and API:**
+  - `requests`
+  - `aiohttp`
+  - `fastapi`
+  - `httpx`
+
+- **Image Processing:**
+  - `Pillow`
+  - `opencv-python`
+  - `scikit-image`
+
+- **Financial Data Tools:**
+  - `yfinance`
+  - `pandas-datareader`
+  - `alpha_vantage`
+
+- **Text Processing and NLP:**
+  - `nltk`
+  - `beautifulsoup4`
+  - `lxml`
+
+- **Development Tools:**
+  - `black`
+  - `flake8`
+  - `pytest`
+  - `mypy`
+
+
 ## Machine Learning
 
 ### machine_learning_001
