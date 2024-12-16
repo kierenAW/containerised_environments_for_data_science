@@ -106,6 +106,39 @@ This container is an enhanced version of data_wrangling_002 with a comprehensive
   - `mypy`
 
 
+### data_wrangling_004
+
+
+This container is built on the latest Ubuntu Noble Numbat (24.04 LTS) base image. Ubuntu Noble offers Long-term support until 2029
+
+This container builds upon data_wrangling_003 package wise, focusing on advanced data profiling, validation, and interactive exploration. It introduces sophisticated tools for comprehensive data analysis and quality assurance.
+
+#### Features:
+- Extended from data_wrangling_003
+- Advanced data profiling capabilities
+- Interactive data exploration
+- Statistical data validation
+- Comprehensive data quality tools
+
+#### Unique Package Additions:
+- **Data Profiling and Validation:**
+  - `ydata-profiling`: Advanced exploratory data analysis
+  - `pandera`: Statistical data validation for pandas
+  - `dtale`: Interactive pandas DataFrame exploration
+
+#### Package Categories:
+- **Core Data Science and Analysis:**
+  - `numpy`
+  - `pandas`
+  - `scipy`
+  - `scikit-learn`
+  - `ydata-profiling`
+  - `pandera`
+  - `dtale`
+
+Note: All packages are fixed at recent versions as of Dec 2024.
+
+
 ## Machine Learning
 
 ### machine_learning_001
