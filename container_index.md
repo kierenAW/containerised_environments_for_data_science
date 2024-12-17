@@ -4,7 +4,7 @@
 
 A data engineering environment with JupyterLab that includes various tools for working with data. The container starts with JupyterLab running for immediate access.
 
-**Directory:** [/data_wrangling/data_wrangling_001](/data_wrangling/data_wrangling_001)
+**Directory:** [/data_wrangling/001](/data_wrangling/001)
 
 #### Included Tools:
 - **Data Collection:**
@@ -32,7 +32,7 @@ Note: All packages are maintained at recent versions (as of Nov 2024).
 
 This container extends the data_wrangling_001 image by adding SSH access for remote development, making it easier to access and work with the data science tools and packages included. The container provides both web-based JupyterLab and SSH connectivity, with a simpler less secure configuration than future versions will provide.
 
-**Directory:** [/data_wrangling/data_wrangling_002](/data_wrangling/data_wrangling_002)
+**Directory:** [/data_wrangling/002](/data_wrangling/002)
 
 #### Features:
 - All features from data_wrangling_001
@@ -44,7 +44,7 @@ This container extends the data_wrangling_001 image by adding SSH access for rem
 
 This container is an enhanced version of data_wrangling_002 with a comprehensive set of data science packages and improved security features. It provides both JupyterLab and SSH access, with packages organized into logical categories for better maintainability.
 
-**Directory:** [/data_wrangling/data_wrangling_003](/data_wrangling/data_wrangling_003)
+**Directory:** [/data_wrangling/003](/data_wrangling/003)
 
 #### Features:
 - Extended from data_wrangling_002
@@ -118,7 +118,7 @@ This container is built on the latest Ubuntu Noble Numbat (24.04 LTS) base image
 
 This container builds upon data_wrangling_003 package wise, focusing on advanced data profiling, validation, and interactive exploration. It introduces sophisticated tools for comprehensive data analysis and quality assurance.
 
-**Directory:** [/data_wrangling/data_wrangling_004](/data_wrangling/data_wrangling_004)
+**Directory:** [/data_wrangling/004](/data_wrangling/004)
 
 #### Features:
 - Extended from data_wrangling_003
@@ -152,7 +152,7 @@ Note: All packages are fixed at recent versions as of Dec 2024.
 
 A machine learning environment with JupyterLab that includes various tools for developing, training and testing machine learning models, with support for Large Language Models (LLMs). The container starts with JupyterLab running for immediate access and provides SSH access using a key. A static Jupyter token is also configurable at build time. This environment is built for CPU usage, ensuring wide compatibility across different systems, but does not include GPU acceleration.
 
-**Directory:** [/machine_learning/machine_learning_001](/machine_learning/machine_learning_001)
+**Directory:** [/machine_learning/001](/machine_learning/001)
 
 #### Included Tools:
 - **Core Libraries:**
@@ -214,7 +214,7 @@ Note: All packages are maintained at recent versions (as of Nov 2024).
 
 An enhanced version of machine_learning_001 with CUDA support for GPU acceleration. This container is built on the NVIDIA CUDA base image (cuda:12.1.0-base-ubuntu22.04) and includes all the machine learning tools from machine_learning_001, optimized for GPU usage. The container provides both JupyterLab and SSH access, making it suitable for both interactive development and production deployments.
 
-**Directory:** [/machine_learning/machine_learning_002](/machine_learning/machine_learning_002)
+**Directory:** [/machine_learning/002](/machine_learning/002)
 
 #### Features:
 - All features from machine_learning_001
@@ -236,7 +236,7 @@ Note: This container requires a compatible NVIDIA GPU and appropriate NVIDIA dri
 
 A comprehensive system monitoring application designed to provide real-time insights into host system resources.
 
-**Directory:** [/apps/system_monitor_001](/apps/system_monitor_001)
+**Directory:** [/apps/system_monitor/001](/apps/system_monitor/001)
 
 #### Key Features
 - Real-time monitoring of host system resources
