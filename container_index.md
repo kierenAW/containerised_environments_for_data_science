@@ -230,16 +230,80 @@ An enhanced version of machine_learning_001 with CUDA support for GPU accelerati
 
 Note: This container requires a compatible NVIDIA GPU and appropriate NVIDIA drivers installed on the host system. Use the `--gpus all` flag when running the container to enable GPU access.
 
+## Apps
+
+### system_monitor_001
+
+A comprehensive system monitoring application designed to provide real-time insights into host system resources.
+
+**Directory:** [/apps/system_monitor_001](/apps/system_monitor_001)
+
+#### Key Features
+- Real-time monitoring of host system resources
+- Detailed CPU usage tracking
+  - Total CPU usage
+  - Individual core usage
+  - Load average history
+- Comprehensive memory monitoring
+  - Total, used, and available memory
+  - Buffers and cached memory tracking
+  - Swap space utilization
+- GPU monitoring (when available)
+  - GPU utilization
+  - GPU memory usage
+  - GPU temperature
+  - **New: GPU temperature history chart**
+
+#### Technical Highlights
+- Built with Flask backend
+- Chart.js for dynamic, real-time visualizations
+- Docker-based containerized application
+- Privileged mode for direct host resource access
+- Responsive web interface
+
+#### Requirements
+- Docker with compose support
+- Host system with accessible `/proc` filesystem
+- Optional: NVIDIA GPU for GPU monitoring
+
+#### Monitoring Metrics
+- **CPU**
+  - Total CPU usage percentage
+  - Per-core usage
+  - 1, 5, and 15-minute load averages
+  - Historical charts for each metric
+
+- **Memory**
+  - Total system memory
+  - Used memory
+  - Available memory
+  - Memory buffers
+  - Cached memory
+  - Swap space usage
+
+- **GPU** (if available)
+  - GPU utilization
+  - GPU memory usage
+  - GPU temperature
+  - **New: GPU temperature history chart**
+
+#### Notes
+- Requires a system with NVIDIA GPU for full GPU monitoring
+- Designed for development and local system monitoring
+- Not recommended for production deployment without additional security configurations
+- Provides a web interface at `http://localhost:5000`
+
+#### Deployment
+```bash
+# Navigate to the project directory
+cd /path/to/project
+
+# Build and start the container
+docker compose up --build
+```
 
 ## Analysis Visualisation
 
 ### analysis_visualisation_001
 
-WIP - to be added soon.
-
-
-
-## Apps
-
-### app_01
 WIP - to be added soon.
